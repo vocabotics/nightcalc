@@ -18,6 +18,23 @@ export function Home() {
           />
         ))}
       </div>
+      <div className="absolute inset-0">
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={`planet-${i}`}
+            className="absolute rounded-full"
+            style={{
+              width: Math.random() * 50 + 20 + 'px',
+              height: Math.random() * 50 + 20 + 'px',
+              top: Math.random() * 80 + 10 + '%',
+              left: Math.random() * 80 + 10 + '%',
+              background: `radial-gradient(circle at 30% 30%, rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}), rgb(${Math.random() * 100}, ${Math.random() * 100}, ${Math.random() * 100}))`,
+              boxShadow: '0 0 20px rgba(255, 255, 255, 0.2)',
+              opacity: 0.7
+            }}
+          />
+        ))}
+      </div>
       <Calculator />
     </div>
   );
