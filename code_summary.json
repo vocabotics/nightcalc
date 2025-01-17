@@ -1,0 +1,39 @@
+{
+  "directories": [
+    "src/",
+    "src/components/",
+    "src/components/Calculator/",
+    "src/pages/"
+  ],
+  "files": [
+    "src/App.tsx",
+    "src/components/Calculator/Calculator.tsx",
+    "src/pages/Home.tsx"
+  ],
+  "components": [
+    "App",
+    "Calculator",
+    "Home"
+  ],
+  "interfaces": [],
+  "types": [
+    "Operation"
+  ],
+  "functions": [
+    "Calculator",
+    "Home",
+    "App",
+    "handleNumber",
+    "handleOperation",
+    "calculate",
+    "clear",
+    "deleteLastDigit"
+  ],
+  "hooks": [],
+  "state": {
+    "display": "string",
+    "firstNumber": "string",
+    "operation": "Operation",
+    "newNumber": "boolean"
+  }
+}
