@@ -71,40 +71,40 @@ export function Calculator() {
 
   return (
     <motion.div
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.3 }}
+      initial={{ scale: 0.9, opacity: 0, y: 20 }}
+      animate={{ scale: 1, opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
-      <Card className="w-80 bg-slate-900 border-slate-800">
+      <Card className="w-80 bg-opacity-40 bg-slate-900 backdrop-blur-md border-purple-500 border-opacity-30 shadow-lg shadow-purple-500/20">
         <CardContent className="p-4">
-          <div className="mb-4 bg-slate-800 p-4 rounded-lg">
+          <div className="mb-4 bg-slate-800 bg-opacity-50 p-4 rounded-lg border border-purple-500 border-opacity-20">
             <div className="text-right text-2xl font-mono text-white">{display}</div>
           </div>
           <div className="grid grid-cols-4 gap-2">
             <Button
               variant="outline"
-              className="bg-slate-800 text-white hover:bg-slate-700"
+              className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
               onClick={clear}
             >
               C
             </Button>
             <Button
               variant="outline"
-              className="bg-slate-800 text-white hover:bg-slate-700"
+              className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
               onClick={deleteLastDigit}
             >
               <FiDelete />
             </Button>
             <Button
               variant="outline"
-              className="bg-slate-800 text-white hover:bg-slate-700"
+              className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
               onClick={() => handleOperation('/')}
             >
               ÷
             </Button>
             <Button
               variant="outline"
-              className="bg-slate-800 text-white hover:bg-slate-700"
+              className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
               onClick={() => handleOperation('*')}
             >
               ×
@@ -113,7 +113,7 @@ export function Calculator() {
               <Button
                 key={num}
                 variant="outline"
-                className="bg-slate-800 text-white hover:bg-slate-700"
+                className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
                 onClick={() => handleNumber(num.toString())}
               >
                 {num}
@@ -121,28 +121,28 @@ export function Calculator() {
             ))}
             <Button
               variant="outline"
-              className="bg-slate-800 text-white hover:bg-slate-700"
+              className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
               onClick={() => handleNumber('.')}
             >
               .
             </Button>
             <Button
               variant="outline"
-              className="bg-slate-800 text-white hover:bg-slate-700"
+              className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
               onClick={() => handleOperation('-')}
             >
               -
             </Button>
             <Button
               variant="outline"
-              className="bg-slate-800 text-white hover:bg-slate-700"
+              className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
               onClick={() => handleOperation('+')}
             >
               +
             </Button>
             <Button
               variant="outline"
-              className="bg-slate-800 text-white hover:bg-slate-700"
+              className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
               onClick={calculate}
             >
               =
