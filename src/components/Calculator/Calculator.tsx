@@ -129,28 +129,28 @@ export function Calculator() {
             <div className="grid grid-cols-4 gap-2">
               <Button
                 variant="outline"
-                className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
+                className="bg-red-900 bg-opacity-50 text-white hover:bg-red-800 hover:bg-opacity-70 border-red-500 border-opacity-30"
                 onClick={clear}
               >
                 C
               </Button>
               <Button
                 variant="outline"
-                className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
+                className="bg-orange-900 bg-opacity-50 text-white hover:bg-orange-800 hover:bg-opacity-70 border-orange-500 border-opacity-30"
                 onClick={deleteLastDigit}
               >
                 <FiDelete />
               </Button>
               <Button
                 variant="outline"
-                className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
+                className="bg-yellow-900 bg-opacity-50 text-white hover:bg-yellow-800 hover:bg-opacity-70 border-yellow-500 border-opacity-30"
                 onClick={() => handleOperation('/')}
               >
                 ÷
               </Button>
               <Button
                 variant="outline"
-                className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
+                className="bg-green-900 bg-opacity-50 text-white hover:bg-green-800 hover:bg-opacity-70 border-green-500 border-opacity-30"
                 onClick={() => handleOperation('*')}
               >
                 ×
@@ -159,7 +159,7 @@ export function Calculator() {
                 <Button
                   key={num}
                   variant="outline"
-                  className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
+                  className="bg-blue-900 bg-opacity-50 text-white hover:bg-blue-800 hover:bg-opacity-70 border-blue-500 border-opacity-30"
                   onClick={() => handleNumber(num.toString())}
                 >
                   {num}
@@ -167,7 +167,7 @@ export function Calculator() {
               ))}
               <Button
                 variant="outline"
-                className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
+                className="bg-indigo-900 bg-opacity-50 text-white hover:bg-indigo-800 hover:bg-opacity-70 border-indigo-500 border-opacity-30"
                 onClick={() => handleNumber('.')}
               >
                 .
@@ -181,14 +181,14 @@ export function Calculator() {
               </Button>
               <Button
                 variant="outline"
-                className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
+                className="bg-pink-900 bg-opacity-50 text-white hover:bg-pink-800 hover:bg-opacity-70 border-pink-500 border-opacity-30"
                 onClick={() => handleOperation('+')}
               >
                 +
               </Button>
               <Button
                 variant="outline"
-                className="bg-purple-900 bg-opacity-50 text-white hover:bg-purple-800 hover:bg-opacity-70 border-purple-500 border-opacity-30"
+                className="bg-rose-900 bg-opacity-50 text-white hover:bg-rose-800 hover:bg-opacity-70 border-rose-500 border-opacity-30"
                 onClick={calculate}
               >
                 =
