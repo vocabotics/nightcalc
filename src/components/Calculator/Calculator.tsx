@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
@@ -13,7 +13,32 @@ export function Calculator() {
   const [newNumber, setNewNumber] = useState(false);
   const [isLaunching, setIsLaunching] = useState(false);
 
+  useEffect(() => {
+    const buttonSound = new Audio('/button-press.mp3');
+    const equalsSound = new Audio('/equals.mp3');
+    const clearSound = new Audio('/clear.mp3');
+    const rocketSound = new Audio('/rocket.mp3');
+
+    buttonSound.preload = 'auto';
+    equalsSound.preload = 'auto';
+    clearSound.preload = 'auto';
+    rocketSound.preload = 'auto';
+
+    return () => {
+      buttonSound.remove();
+      equalsSound.remove();
+      clearSound.remove();
+      rocketSound.remove();
+    };
+  }, []);
+
+  const playSound = (type: 'button' | 'equals' | 'clear' | 'rocket') => {
+    const audio = new Audio(`/${type}.mp3`);
+    audio.play().catch(console.error);
+  };
+
   const handleNumber = (num: string) => {
+    playSound('button');
     if (display === '0' || newNumber) {
       setDisplay(num);
       setNewNumber(false);
@@ -23,6 +48,7 @@ export function Calculator() {
   };
 
   const handleOperation = (op: Operation) => {
+    playSound('button');
     setFirstNumber(display);
     setOperation(op);
     setNewNumber(true);
@@ -30,6 +56,7 @@ export function Calculator() {
 
   const calculate = () => {
     if (!operation || !firstNumber) return;
+    playSound('equals');
     const num1 = parseFloat(firstNumber);
     const num2 = parseFloat(display);
     let result = 0;
@@ -54,10 +81,12 @@ export function Calculator() {
     setFirstNumber('');
     setNewNumber(true);
     setIsLaunching(true);
+    playSound('rocket');
     setTimeout(() => setIsLaunching(false), 1000);
   };
 
   const clear = () => {
+    playSound('clear');
     setDisplay('0');
     setFirstNumber('');
     setOperation('');
@@ -65,6 +94,7 @@ export function Calculator() {
   };
 
   const deleteLastDigit = () => {
+    playSound('button');
     if (display.length > 1) {
       setDisplay(display.slice(0, -1));
     } else {
